@@ -23,9 +23,9 @@
     echo $sql;
     // Executa comando no banco de dados
     $result =  mysqli_query($con, $sql);
-    if($result){
+    if ($result) {
         echo "<h2>Dados cadastrados com sucesso!</h2>";
-    }else{
+    } else {
         echo "<h2>Erro ao cadastrar!</h2>";
         echo mysqli_error($con);
     }
