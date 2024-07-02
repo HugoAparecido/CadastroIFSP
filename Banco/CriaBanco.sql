@@ -17,7 +17,7 @@ CREATE TABLE cidade
     PRIMARY KEY(id)
 );
 
--- Cria a tabela cliente
+-- Cria tabela cliente
 CREATE TABLE cliente
 (
     id          INT AUTO_INCREMENT,
