@@ -14,7 +14,6 @@
     $sql = "SELECT * FROM cidade";
     // Executa a consulta
     $result = mysqli_query($con, $sql);
-    /// Retorna apenas uma linha
     ?>
     <h1>Consulta de Cidades</h1>
     <table>
