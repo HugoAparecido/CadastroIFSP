@@ -30,6 +30,7 @@
         echo mysqli_error($con);
     }
     ?>
+    <button><a href="./index.html">Voltar à pagina inicial</a></button>
 </body>
 
 </html>

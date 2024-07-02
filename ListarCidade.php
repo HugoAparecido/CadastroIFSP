@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <button><a href="./index.html">Voltar</a></button>
     <?php
     include('./includes/conexao.php');
     $sql = "SELECT * FROM cidade";
