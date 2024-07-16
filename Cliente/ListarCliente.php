@@ -11,10 +11,10 @@
 
 <body>
     <div class="principal flex inverter_column">
-        <button class="botao"><a href="./index.html">Voltar</a></button>
+        <button class="botao"><a href="../index.html">Voltar</a></button>
         <?php
-        include('./includes/conexao.php');
-        $sql = "SELECT * FROM cidade";
+        include('../includes/conexao.php');
+        $sql = "SELECT * FROM cliente";
         // Executa a consulta
         $result = mysqli_query($con, $sql);
         ?>
@@ -23,7 +23,9 @@
             <tr>
                 <th>Código</th>
                 <th>Nome</th>
-                <th>Estado</th>
+                <th>E-mail</th>
+                <th>Senha</th>
+                <th>Ativo</th>
                 <th>Alterar</th>
                 <th>Deletar</th>
             </tr>
@@ -32,9 +34,11 @@
                 echo "<tr>";
                 echo "<td>" . $row['id'] . "</td>";
                 echo "<td>" . $row['nome'] . "</td>";
-                echo "<td>" . $row['estado'] . "</td>";
-                echo "<td><a href='alteraCidade.php?id=" . $row['id'] . "'>Alterar</a></td>";
-                echo "<td><a href='deletaCidade.php?id=" . $row['id'] . "'>Deletar</a></td>";
+                echo "<td>" . $row['email'] . "</td>";
+                echo "<td>" . $row['senha'] . "</td>";
+                echo "<td>" . $row['ativo'] ? "Sim" : "Não" . "</td>";
+                echo "<td><a href='alteraCliente.php?id=" . $row['id'] . "'>Alterar</a></td>";
+                echo "<td><a href='deletaCliente.php?id=" . $row['id'] . "'>Deletar</a></td>";
                 echo "</tr>";
             }
             ?>

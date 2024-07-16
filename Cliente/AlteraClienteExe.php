@@ -1,8 +1,10 @@
 <?php
-include('./includes/conexao.php');
+include('../includes/conexao.php');
 $id = $_POST['id'];
 $nome = $_POST['nome'];
-$estado = $_POST['estado'];
+$senha = $_POST['senha'];
+$email = $_POST['email'];
+$ativo = $_POST['ativo'] == "sim" ? true : false;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,15 +21,17 @@ $estado = $_POST['estado'];
     <?php
     echo "<p>Id: $id</p>";
     echo "<p>Nome: $nome</p>";
-    echo "<p>Estado: $estado</p>";
-    $sql = "UPDATE cidade SET nome = '$nome', estado = '$estado' WHERE id = $id";
+    echo "<p>E-mail: $email</p>";
+    echo "<p>Senha: $senha</p>";
+    echo "<p>Ativo: " . $ativo ? "Sim" : "Não" . "</p>";
+    $sql = "UPDATE cliente SET nome = '$nome', email = '$email', senha = '$senha', ativo = $ativo WHERE id = $id";
     $result = mysqli_query($con, $sql);
     if ($result)
         echo "Dados atualizados!";
     else
         echo "Erro ao atualizar dados!\n" . mysqli_error($con);
     ?>
-    <button class="botao"><a href="./ListarCidade.php">Voltar</a></button>
+    <button class="botao"><a href="./ListarCliente.php">Voltar</a></button>
 </body>
 
 </html>
