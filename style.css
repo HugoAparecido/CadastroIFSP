@@ -10,7 +10,8 @@
 }
 .botao {
   cursor: pointer;
-  width: 100px;
+  width: auto;
+  min-width: 100px;
   height: 40px;
   color: black;
   background-color: coral;
@@ -43,6 +44,7 @@ form {
 }
 .botao_submit:hover {
   text-decoration: underline;
+  width: auto;
 }
 input,
 option,
