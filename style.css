@@ -51,3 +51,10 @@ select {
   border-radius: 25px;
   font-size: 20px;
 }
+table td{
+  border: 2px solid black;
+}
+table {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
