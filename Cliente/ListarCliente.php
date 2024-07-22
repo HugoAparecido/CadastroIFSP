@@ -31,12 +31,13 @@
             </tr>
             <?php
             while ($row = mysqli_fetch_array($result)) {
+                $ativo = $row['ativo'] == 0 ? "Sim" : "Não";
                 echo "<tr>";
                 echo "<td>" . $row['id'] . "</td>";
                 echo "<td>" . $row['nome'] . "</td>";
                 echo "<td>" . $row['email'] . "</td>";
                 echo "<td>" . $row['senha'] . "</td>";
-                echo "<td>" . $row['ativo'] ? "Sim" : "Não" . "</td>";
+                echo "<td>" . $ativo . "</td>";
                 echo "<td><a href='alteraCliente.php?id=" . $row['id'] . "'>Alterar</a></td>";
                 echo "<td><a href='deletaCliente.php?id=" . $row['id'] . "'>Deletar</a></td>";
                 echo "</tr>";

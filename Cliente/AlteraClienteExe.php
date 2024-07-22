@@ -24,6 +24,7 @@ $ativo = $_POST['ativo'] == "sim" ? true : false;
     echo "<p>E-mail: $email</p>";
     echo "<p>Senha: $senha</p>";
     echo "<p>Ativo: " . $ativo ? "Sim" : "Não" . "</p>";
+    $ativo = $ativo ? 0 : 1;
     $sql = "UPDATE cliente SET nome = '$nome', email = '$email', senha = '$senha', ativo = $ativo WHERE id = $id";
     $result = mysqli_query($con, $sql);
     if ($result)
