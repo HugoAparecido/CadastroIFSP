@@ -42,11 +42,10 @@ $rowCliente = mysqli_fetch_array($result);
         <div><label for="cidade">Cidade</label>
           <select name="cidade" id="cidade">
             <?php
-            include('../includes/conexao.php');
             $sql = "SELECT * FROM cidade";
             $result = mysqli_query($con, $sql);
             while ($rowCidade = mysqli_fetch_array($result)) {
-              echo "<option value='" . $rowCidade['id'] . "' " . $rowCidade['id'] == $rowCliente['id_cidade'] ? "selected" : "" . ">" . $rowCidade['nome'] . "/" . $rowCidade['estado'] . "</option>";
+              echo "<option value='" . $rowCidade['id'] . "' >". $rowCidade['nome'] . "/" . $rowCidade['estado'] . "</option>";
             }
             ?>
           </select>
