@@ -5,6 +5,7 @@ $nome = $_POST['nome'];
 $senha = $_POST['senha'];
 $email = $_POST['email'];
 $ativo = $_POST['ativo'] == "sim" ? true : false;
+$cidade = $_POST['cidade'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,7 +26,7 @@ $ativo = $_POST['ativo'] == "sim" ? true : false;
     echo "<p>Senha: $senha</p>";
     echo "<p>Ativo: " . $ativo ? "Sim" : "Não" . "</p>";
     $ativo = $ativo ? 0 : 1;
-    $sql = "UPDATE cliente SET nome = '$nome', email = '$email', senha = '$senha', ativo = $ativo WHERE id = $id";
+    $sql = "UPDATE cliente SET nome = '$nome', email = '$email', senha = '$senha', ativo = $ativo, id_cidade = $cidade WHERE id = $id";
     $result = mysqli_query($con, $sql);
     if ($result)
         echo "Dados atualizados!";
