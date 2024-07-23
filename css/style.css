@@ -1,3 +1,10 @@
+:root{
+  --verde-escuro: #182625;
+  --verde: #28403D;
+  --cinza: #455559;
+  --cinza-escuro: #2F3D40;
+  --azul: #3D5A73;
+}
 .flex {
   display: flex;
   justify-content: space-around;
@@ -14,12 +21,13 @@
   min-width: 100px;
   height: 40px;
   color: black;
-  background-color: coral;
+  background-color: var(--azul);
   border-radius: 25px;
+  transition: 1s;
 }
 .botao > a {
   text-decoration: none;
-  color: black;
+  color: var(--verde-escuro);
 }
 .botao:hover a,
 .botao:hover {
@@ -39,12 +47,12 @@ form {
   width: 100px;
   height: 40px;
   color: black;
-  background-color: burlywood;
+  background-color: var(--verde);
   border-radius: 25px;
 }
 .botao_submit:hover {
   text-decoration: underline;
-  width: auto;
+  transition: 1s;
 }
 input,
 option,

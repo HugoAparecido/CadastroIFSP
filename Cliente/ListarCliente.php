@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/listagem.css">
     <title>Document</title>
 </head>
 
@@ -14,7 +15,7 @@
         <button class="botao"><a href="../index.html">Voltar</a></button>
         <?php
         include('../includes/conexao.php');
-        $sql = "SELECT * FROM cliente";
+        $sql = "SELECT cli.id, cli.nome nomecliente, cli.email, cli.ativo, cid.nome nomeCidade, cid.estado FROM cliente cli LeFT JOIN cidade cid ON cid.id = cli.id_cidade";
         // Executa a consulta
         $result = mysqli_query($con, $sql);
         ?>
@@ -26,6 +27,8 @@
                 <th>E-mail</th>
                 <th>Senha</th>
                 <th>Ativo</th>
+                <th>Cidade</th>
+                <th>Estado</th>
                 <th>Alterar</th>
                 <th>Deletar</th>
             </tr>
@@ -34,8 +37,8 @@
                 $ativo = $row['ativo'] == 0 ? "Sim" : "Não";
                 echo "<tr>";
                 echo "<td>" . $row['id'] . "</td>";
-                echo "<td>" . $row['nome'] . "</td>";
-                echo "<td>" . $row['email'] . "</td>";
+                echo "<td>" . $row['nomecliente'] . "</td>";
+                echo "<td>" . $row[''] . "</td>";
                 echo "<td>" . $row['senha'] . "</td>";
                 echo "<td>" . $ativo . "</td>";
                 echo "<td><a href='alteraCliente.php?id=" . $row['id'] . "'>Alterar</a></td>";
