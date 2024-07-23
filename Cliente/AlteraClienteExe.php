@@ -17,7 +17,7 @@ $ativo = $_POST['ativo'] == "sim" ? true : false;
 </head>
 
 <body>
-    <h1>Alteração de cidade</h1>
+    <h1>Alteração de cliente</h1>
     <?php
     echo "<p>Id: $id</p>";
     echo "<p>Nome: $nome</p>";

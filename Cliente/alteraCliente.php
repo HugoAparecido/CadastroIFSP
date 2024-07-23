@@ -20,7 +20,7 @@ $row = mysqli_fetch_array($result);
   <div class="principal flex inverter_column">
     <form action="./AlteraClienteExe.php" method="post">
       <fieldset>
-        <legend>Cadastro de Cidades</legend>
+        <legend>Alteração de cliente</legend>
         <div>
           <label for="nome">Nome</label>
           <input type="text" name="nome" id="nome" value="<?php echo $row['nome'] ?>" />
@@ -40,7 +40,7 @@ $row = mysqli_fetch_array($result);
         </div>
         <input type="hidden" name='id' value='<?php echo $row['id'] ?>'>
         <div>
-          <button class="botao_submit" type="submit">Cadastrar</button>
+          <button class="botao_submit" type="submit">Alterar</button>
         </div>
       </fieldset>
     </form>

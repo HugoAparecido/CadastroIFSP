@@ -20,10 +20,11 @@
     echo "Nome: $nome</br>";
     echo "Senha: $senha</br>";
     echo "E-mail: $email</br>";
-    echo "Ativo: " . $ativo ? "Sim" : "Não" . "</br>";
+    echo "Ativo: " . $ativo ? "Sim" : "Não" . "</br></br>";
     // INSERT INTO cliente (nome, email, senha, ativo)
-    // VALUES ('$nome', '$estado', '$senha', $ativo == "sim" : )
+    // VALUES ('$nome', '$estado', '$senha', $ativo == "sim" ? 0 : 1)
     $sql = "INSERT INTO cliente (nome, email, senha, ativo)";
+    $ativo = $ativo ? 0 : 1;
     $sql .= " VALUES('" . $nome . "', '" . $email . "', '" . $senha . "', $ativo)";
     echo $sql;
     // Executa comando no banco de dados
