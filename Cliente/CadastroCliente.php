@@ -11,7 +11,7 @@
 
 <body>
     <div class="principal flex inverter_column">
-        <form action="./CadastroCliente.php" method="post">
+        <form action="./CadastroClienteExe.php" method="post">
             <fieldset>
                 <legend>Cadastro de Clientes</legend>
                 <div>

@@ -3,7 +3,7 @@ include('../includes/conexao.php');
 $id = $_GET['id'];
 $sql = "SELECT * FROM cliente WHERE id=$id";
 $result = mysqli_query($con, $sql);
-$row = mysqli_fetch_array($result);
+$rowCliente = mysqli_fetch_array($result);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -23,22 +23,34 @@ $row = mysqli_fetch_array($result);
         <legend>Alteração de cliente</legend>
         <div>
           <label for="nome">Nome</label>
-          <input type="text" name="nome" id="nome" value="<?php echo $row['nome'] ?>" />
+          <input type="text" name="nome" id="nome" value="<?php echo $rowCliente['nome'] ?>" />
         </div>
         <div>
           <label for="email">E-mail</label>
-          <input type="email" name="email" id="email" value="<?php echo $row['email'] ?>" />
+          <input type="email" name="email" id="email" value="<?php echo $rowCliente['email'] ?>" />
         </div>
         <div>
           <label for="senha">Senha</label>
-          <input type="password" name="senha" id="senha" value="<?php echo $row['senha'] ?>" />
+          <input type="password" name="senha" id="senha" value="<?php echo $rowCliente['senha'] ?>" />
         </div>
         <div>
           <label>Ativo:</label>
-          <input type="radio" name="ativo" id="AtivoSim" value="sim" <?php echo $row['ativo'] == 0 ? "checked" : "" ?> /><label id="AtivoSim">Sim</label>
-          <input type="radio" name="ativo" id="AtivoNao" value="nao" <?php echo $row['ativo'] == 1 ? "checked" : "" ?> /><label id="AtivoNao">Não</label>
+          <input type="radio" name="ativo" id="AtivoSim" value="sim" <?php echo $rowCliente['ativo'] == 0 ? "checked" : "" ?> /><label id="AtivoSim">Sim</label>
+          <input type="radio" name="ativo" id="AtivoNao" value="nao" <?php echo $rowCliente['ativo'] == 1 ? "checked" : "" ?> /><label id="AtivoNao">Não</label>
         </div>
-        <input type="hidden" name='id' value='<?php echo $row['id'] ?>'>
+        <input type="hidden" name='id' value='<?php echo $rowCliente['id'] ?>'>
+        <div><label for="cidade">Cidade</label>
+          <select name="cidade" id="cidade">
+            <?php
+            include('../includes/conexao.php');
+            $sql = "SELECT * FROM cidade";
+            $result = mysqli_query($con, $sql);
+            while ($rowCidade = mysqli_fetch_array($result)) {
+              echo "<option value='" . $rowCidade['id'] . "' " . $rowCidade['id'] == $rowCliente['id_cidade'] ? "selected" : "" . ">" . $rowCidade['nome'] . "/" . $rowCidade['estado'] . "</option>";
+            }
+            ?>
+          </select>
+        </div>
         <div>
           <button class="botao_submit" type="submit">Alterar</button>
         </div>
