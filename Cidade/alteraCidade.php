@@ -32,7 +32,7 @@ $row = mysqli_fetch_array($result);
                         <option value="RJ" <?php echo $row['estado'] == "RJ" ? "selected" : "" ?>>RJ</option>
                         <option value="MG" <?php echo $row['estado'] == "MG" ? "selected" : "" ?>>MG</option>
                     </select>
-                <input type="hidden" name='id' value='<?php echo $row['id']?>'>
+                    <input type="hidden" name='id' value='<?php echo $row['id'] ?>'>
                 </div>
                 <div>
                     <button class="botao_submit" type="submit">Alterar</button>
