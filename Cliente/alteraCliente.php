@@ -45,7 +45,7 @@ $rowCliente = mysqli_fetch_array($result);
             $sql = "SELECT * FROM cidade";
             $result = mysqli_query($con, $sql);
             while ($rowCidade = mysqli_fetch_array($result)) {
-              echo "<option value='" . $rowCidade['id'] . "' " . $rowCidade['id'] == $rowCliente['id_cidade'] ? "selected" : "" . ">" . $rowCidade['nome'] . "/" . $rowCidade['estado'] . "</option>";
+              echo "<option value='" . $rowCidade['id'] . "' " . ($rowCidade['id'] == $rowCliente['id_cidade'] ? "selected" : "") . ">" . $rowCidade['nome'] . "/" . $rowCidade['estado'] . "</option>";
             }
             ?>
           </select>
