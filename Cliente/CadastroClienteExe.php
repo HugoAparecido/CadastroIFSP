@@ -16,16 +16,16 @@
     $senha = $_POST['senha'];
     $email = $_POST['email'];
     $ativo = $_POST['ativo'] == "sim" ? true : false;
+    $cidade = $_POST['cidade'];
     echo "<h1>Dados do Cliente</h1>";
     echo "Nome: $nome</br>";
-    echo "Senha: $senha</br>";
     echo "E-mail: $email</br>";
     echo "Ativo: " . $ativo ? "Sim" : "Não" . "</br></br>";
     // INSERT INTO cliente (nome, email, senha, ativo)
     // VALUES ('$nome', '$estado', '$senha', $ativo == "sim" ? 0 : 1)
-    $sql = "INSERT INTO cliente (nome, email, senha, ativo)";
+    $sql = "INSERT INTO cliente (nome, email, senha, ativo, id_cidade)";
     $ativo = $ativo ? 0 : 1;
-    $sql .= " VALUES('" . $nome . "', '" . $email . "', '" . $senha . "', $ativo)";
+    $sql .= " VALUES('" . $nome . "', '" . $email . "', '" . $senha . "', ".$ativo.",".$cidade.")";
     echo $sql;
     // Executa comando no banco de dados
     $result =  mysqli_query($con, $sql);
