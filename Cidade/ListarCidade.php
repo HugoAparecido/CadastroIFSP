@@ -12,7 +12,7 @@
 
 <body>
     <div class="principal flex inverter_column">
-        <button class="botao"><a href="../index.html">Voltar</a></button>
+        <button class="botao"><a href="../index.php">Voltar</a></button>
         <?php
         include('../includes/conexao.php');
         $sql = "SELECT * FROM cidade";

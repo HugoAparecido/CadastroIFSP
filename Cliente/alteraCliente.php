@@ -55,7 +55,7 @@ $rowCliente = mysqli_fetch_array($result);
         </div>
       </fieldset>
     </form>
-    <button class="botao"><a href="../index.html">Voltar</a></button>
+    <button class="botao"><a href="../index.php">Voltar</a></button>
   </div>
 </body>
 

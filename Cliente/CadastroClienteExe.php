@@ -35,7 +35,7 @@
         echo mysqli_error($con);
     }
     ?>
-    <button class="botao"><a href="../index.html">Voltar à pagina inicial</a></button>
+    <button class="botao"><a href="../index.php">Voltar à pagina inicial</a></button>
 </body>
 
 </html>
