@@ -4,7 +4,7 @@ $id = $_POST['id'];
 $nome = $_POST['nome'];
 $senha = $_POST['senha'];
 $email = $_POST['email'];
-$ativo = $_POST['ativo'] == "sim" ? true : false;
+$ativo = intval($_POST['ativo']);
 $cidade = $_POST['cidade'];
 ?>
 <!DOCTYPE html>
@@ -25,7 +25,6 @@ $cidade = $_POST['cidade'];
     echo "<p>E-mail: $email</p>";
     echo "<p>Senha: $senha</p>";
     echo "<p>Ativo: " . $ativo ? "Sim" : "Não" . "</p>";
-    $ativo = $ativo ? 0 : 1;
     $sql = "UPDATE cliente SET nome = '$nome', email = '$email', senha = '$senha', ativo = $ativo, id_cidade = $cidade WHERE id = $id";
     $result = mysqli_query($con, $sql);
     if ($result)

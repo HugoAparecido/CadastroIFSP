@@ -35,8 +35,8 @@ $rowCliente = mysqli_fetch_array($result);
         </div>
         <div>
           <label>Ativo:</label>
-          <input type="radio" name="ativo" id="AtivoSim" value="sim" <?php echo $rowCliente['ativo'] == 0 ? "checked" : "" ?> /><label id="AtivoSim">Sim</label>
-          <input type="radio" name="ativo" id="AtivoNao" value="nao" <?php echo $rowCliente['ativo'] == 1 ? "checked" : "" ?> /><label id="AtivoNao">Não</label>
+          <input type="radio" name="ativo" id="AtivoSim" value="1" <?php echo $rowCliente['ativo'] == 1 ? "checked" : "" ?> /><label id="AtivoSim">Sim</label>
+          <input type="radio" name="ativo" id="AtivoNao" value="0" <?php echo $rowCliente['ativo'] == 0 ? "checked" : "" ?> /><label id="AtivoNao">Não</label>
         </div>
         <input type="hidden" name='id' value='<?php echo $rowCliente['id'] ?>'>
         <div><label for="cidade">Cidade</label>

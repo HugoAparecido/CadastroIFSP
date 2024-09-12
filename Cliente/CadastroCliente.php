@@ -28,8 +28,8 @@
                 </div>
                 <div>
                     <label>Ativo:</label>
-                    <input type="radio" name="ativo" id="AtivoSim" value="sim" /><label id="AtivoSim">Sim</label>
-                    <input type="radio" name="ativo" id="AtivoNao" value="nao" /><label id="AtivoNao">Não</label>
+                    <input type="radio" name="ativo" id="AtivoSim" value="1" /><label id="AtivoSim">Sim</label>
+                    <input type="radio" name="ativo" id="AtivoNao" value="0" /><label id="AtivoNao">Não</label>
                 </div>
                 <div><label for="cidade">Cidade</label>
                     <select name="cidade" id="cidade">

@@ -33,7 +33,7 @@
             </tr>
             <?php
             while ($row = mysqli_fetch_array($result)) {
-                $ativo = $row['ativo'] == 0 ? "Sim" : "Não";
+                $ativo = $row['ativo'] == 1 ? "Sim" : "Não";
                 echo "<tr>";
                 echo "<td>" . $row['id'] . "</td>";
                 echo "<td>" . $row['nomecliente'] . "</td>";
